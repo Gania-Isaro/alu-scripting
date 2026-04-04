@@ -14,13 +14,7 @@ def top_ten(subreddit):
     params = {"limit": 10}
 
     try:
-        res = requests.get(
-            url,
-            headers=headers,
-            params=params,
-            allow_redirects=False
-        )
-
+        res = requests.get(url, headers=headers, params=params, allow_redirects=False)
         if res.status_code != 200:
             print(None)
             return
@@ -30,7 +24,7 @@ def top_ten(subreddit):
             print(None)
             return
 
-        for post in posts:
+        for post in posts[:10]:
             print(post.get("data", {}).get("title"))
 
     except Exception:
