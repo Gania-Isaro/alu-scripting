@@ -35,3 +35,4 @@ def top_ten(subreddit):
 
     except Exception:
         print(None)
+        
